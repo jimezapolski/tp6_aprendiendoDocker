@@ -8,13 +8,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instala las dependencias
-RUN npm install --production
+RUN npm install
 
 # Copia el resto del código de la aplicación
 COPY . .
 
 # Expone el puerto en el que correrá la aplicación
-EXPOSE 80
+EXPOSE 3001
 
 # Comando para ejecutar la aplicación
-CMD ["node", "src/app.js"]
+CMD ["node", "src/index.ts"]
