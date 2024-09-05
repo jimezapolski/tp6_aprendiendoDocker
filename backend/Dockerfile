@@ -9,8 +9,6 @@ COPY package*.json ./
 # Instala TypeScript y otras herramientas necesarias
 RUN npm install -g typescript
 
-# Transpila el código TypeScript a JavaScript
-RUN tsc
 
 # Instala las dependencias
 RUN npm install

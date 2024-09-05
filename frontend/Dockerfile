@@ -12,8 +12,7 @@ RUN npm install
 # Instala TypeScript y otras herramientas necesarias
 RUN npm install -g typescript
 
-# Transpila el código TypeScript a JavaScript
-RUN tsc
+
 
 # Copia el resto del código de la aplicación
 COPY . .
