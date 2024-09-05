@@ -7,7 +7,7 @@ services:
     volumes:
       - ./backend/db.sqlite:/app/db.sqlite
     ports:
-      - "3001:3001"
+      - "80:3001"
 
   frontend:
     build:

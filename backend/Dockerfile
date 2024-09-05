@@ -14,7 +14,7 @@ RUN npm install --production
 COPY . .
 
 # Expone el puerto en el que correrá la aplicación
-EXPOSE 3001
+EXPOSE 80:3001
 
 # Comando para ejecutar la aplicación
 CMD ["node", "src/app.js"]
