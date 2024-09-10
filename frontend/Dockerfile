@@ -12,8 +12,6 @@ RUN npm install
 # Instala TypeScript y otras herramientas necesarias
 RUN npm install -g typescript
 
-
-
 # Copia el resto del código de la aplicación
 COPY . .
 

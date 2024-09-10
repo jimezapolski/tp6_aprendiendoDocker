@@ -1,14 +1,14 @@
 # Usa una imagen base de Node.js
-FROM node:18-alpine
+FROM node:20
+
+# Instala TypeScript y otras herramientas necesarias
+RUN npm install -g typescript
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
 # Copia los archivos de package.json y package-lock.json
-COPY package*.json ./
-# Instala TypeScript y otras herramientas necesarias
-RUN npm install -g typescript
-
+COPY package.json ./
 
 # Instala las dependencias
 RUN npm install
