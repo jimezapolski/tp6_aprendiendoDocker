@@ -1,19 +1,21 @@
-import express,{ Express, Request, Response, NextFunction} from "express";
-import dotenv from "dotenv";
+import { Express, Request, Response, NextFunction} from "express";
+const express = require('express');
+
+//import dotenv from "dotenv";
 import path from "path";
 import { agregarImagen, agregarPerfil, avisoPosteo, borrarPerfil, listarImagenesPorPerfil, listarPerfiles} from "./Modelo";
 import cors from "cors";
 
-dotenv.config();
+//dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT || 3000;
+const port =  3000;
 
 function errorHandler(
     error: Error, request: Request, response: Response
 ) {
     console.log(`Hubo un error!`, error);
-    response.header("Content-Type", 'application/json');
+    response.set("Content-Type", 'application/json');
     response.status(500).json({ mensaje: error.message });
 }
 

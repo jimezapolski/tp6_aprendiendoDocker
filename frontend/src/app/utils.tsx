@@ -7,7 +7,7 @@ import {
 } from "./modelo";
 
 export async function api<T>(url: string): Promise<T> {
-  const urlCompleta = `${process.env.NEXT_PUBLIC_URL_API}${url}`;
+  const urlCompleta = `http://18.219.239.1${url}`;
   console.log(urlCompleta);
   const response = await fetch(urlCompleta);
   if (!response.ok) {
@@ -27,7 +27,7 @@ export async function agregarPerfil(
   params: AgregarPerfilParams
 ): Promise<AgregarPerfilRespuesta> {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL_API}/perfil/agregar`,
+    `http://18.219.239.1/perfil/agregar`,
     {
       method: "POST",
       headers: {
@@ -57,7 +57,7 @@ export async function borrarPerfil(
   params: BorrarPerfilParams
 ): Promise<BorrarPerfilRespuesta> {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL_API}/perfil/borrar`,
+    `http://18.219.239.1/perfil/borrar`,
     {
       method: "DELETE",
       headers: {
@@ -105,7 +105,7 @@ export const getImagesUrlByProfile = async (
   profileId: number
 ): Promise<string[]> => {
   const images: Imagen[] = await getImagesIdByProfile(profileId);
-  return images.map((i) => `${process.env.NEXT_PUBLIC_URL_API}/imagen/${i.id}`);
+  return images.map((i) => `http://18.219.239.1/imagen/${i.id}`);
 };
 
 export const getLatestImageUrlByProfile = async (profileId: number): Promise<string> => {

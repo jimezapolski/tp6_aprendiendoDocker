@@ -8,16 +8,24 @@ RUN npm install -g typescript
 WORKDIR /app
 
 # Copia los archivos de package.json y package-lock.json
-COPY package.json ./
+#COPY package.json ./
+COPY package*.json ./
 
 # Instala las dependencias
+#RUN npm install
+# Limpiar caché y reinstalar dependencias
+RUN npm cache clean --force
+RUN rm -rf node_modules
 RUN npm install
+# En el contenedor
+
 
 # Copia el resto del código de la aplicación
 COPY . .
 
 # Expone el puerto en el que correrá la aplicación
 EXPOSE 3001
-
+# Compila el código TypeScript a JavaScript
+RUN npm run build
 # Comando para ejecutar la aplicación
-CMD ["node", "src/index.ts"]
+CMD ["npx","node", "src/index.ts"]

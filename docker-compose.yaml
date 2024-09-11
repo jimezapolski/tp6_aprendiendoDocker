@@ -5,7 +5,10 @@ services:
     build:
       context: ./backend
     volumes:
-      - ./backend/db.sqlite:/app/db.sqlite
+ ##     - ./backend/db.sqlite:/app/db.sqlite
+    - .:/app
+    command: npx ts-node backend/src/index.ts
+
     ports:
       - "3001:3001"
 
