@@ -18,13 +18,13 @@ Eliminamos el Gitignore, y funciono todo correctamente.
 
 ## Etapa Dockerizacion, Ballena ojalá que te ahoges.
 Para escribir los archivos, primero fuimos siguiendo las clases y luego empezamos a chatgpterizar el código. Estos fueron los pasos:
-1- Instalamos Docker
-2- Jime tuvo problemas con la contraseña
-3- Jime cambió la contraseña (Una muy segura, CLARAMENTE QUE NO ES 1234)
-4- Jime se dió cuenta que en verdad pedía otra contraseña (por suerte se la acordaba)
-5- Cuando tuvimos docker instalado empezamos a hacer las imágenes de back y front (una imagen-dockerfile por cada carpeta)
+1. Instalamos Docker
+2. Jime tuvo problemas con la contraseña
+3. Jime cambió la contraseña (Una muy segura, CLARAMENTE QUE NO ES 1234)
+4. Jime se dió cuenta que en verdad pedía otra contraseña (por suerte se la acordaba)
+5. Cuando tuvimos docker instalado empezamos a hacer las imágenes de back y front (una imagen-dockerfile por cada carpeta)
 nos fuimos guiando con ChatGPT para poner los parámetros necesarios (hasta acá todo bien porque no estaba buildeado, en si, éramos felices)
-6- Despues de tener las Imagenes hechas, hicimos el docker-compose.yaml para conectar front y back en la carpeta principal (misma dinamica Chatgpteando)
+6. Despues de tener las Imagenes hechas, hicimos el docker-compose.yaml para conectar front y back en la carpeta principal (misma dinamica Chatgpteando)
 Dato curioso: en la vida de la Mac nunca había pasado, pero Docker la dejó en terapia intensiva (unas 6 veces la reiniciamos porq se le trababa el paty)
 
 ## AWSRIZANDO y llorando en el intento (mentira esa es Noe)
