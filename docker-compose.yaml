@@ -1,20 +1,32 @@
-version: '3.8'
+# version: '3'
+
+# Declare the network at the top level
+networks:
+  app-network:
+    driver: bridge
 
 services:
   backend:
     build:
       context: ./backend
+    ports:
+      - "3000:3000"
     volumes:
       - ./backend/db.sqlite:/app/db.sqlite
-    ports:
-      - "3001:3001"
+    networks:
+      - app-network
+    
 
   frontend:
     build:
       context: ./frontend
     depends_on:
       - backend
-    volumes:
-      - ./frontend/public:/app/public
+    environment:
+      - REACT_APP_BACKEND_URL=http://18.219.239.1  # URL del backend en la red de Docker
+    # volumes:
+    #   - ./frontend/public:/app/public
     ports:
-      - "3000:3000"
+      - "8080:3000"
+    networks:
+      - app-network

@@ -1,8 +1,5 @@
 # Usa una imagen base de Node.js
-FROM node:20
-
-# Instala TypeScript y otras herramientas necesarias
-RUN npm install -g typescript
+FROM  node:18-alpine
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
@@ -17,7 +14,8 @@ RUN npm install
 COPY . .
 
 # Expone el puerto en el que correrá la aplicación
-EXPOSE 3001
+EXPOSE 3000
 
 # Comando para ejecutar la aplicación
-CMD ["node", "src/index.ts"]
+# Start the application
+CMD [ "npm", "start" ]
